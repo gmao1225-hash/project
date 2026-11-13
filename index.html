@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>한끼맛집 · 맛집 & 가성비 식당</title>
+  <meta name="description" content="동네 맛집과 가성비 좋은 식당을 한눈에 찾아보세요." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">🍽️ 한끼맛집</a>
+      <nav class="nav">
+        <button class="nav-btn" data-mode="all">전체</button>
+        <button class="nav-btn" data-mode="value">💰 가성비</button>
+        <button class="nav-btn" data-mode="best">⭐ 맛집</button>
+        <button class="nav-btn" data-mode="fav">❤️ 찜</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>오늘 뭐 먹지?</h1>
+      <p>맛있고, 착한 가격의 식당만 모았습니다.</p>
+      <div class="search-box">
+        <input id="search" type="search" placeholder="식당 이름, 지역, 태그로 검색 (예: 칼국수, 마포, 혼밥)" autocomplete="off" />
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="filters" aria-label="필터">
+      <div class="chips" id="category-chips"></div>
+      <div class="filter-row">
+        <label>
+          최대 가격
+          <select id="max-price">
+            <option value="Infinity">제한 없음</option>
+            <option value="7000">7,000원 이하</option>
+            <option value="10000">10,000원 이하</option>
+            <option value="15000">15,000원 이하</option>
+            <option value="20000">20,000원 이하</option>
+          </select>
+        </label>
+        <label>
+          정렬
+          <select id="sort">
+            <option value="score">추천순 (가성비 점수)</option>
+            <option value="rating">평점 높은순</option>
+            <option value="price">가격 낮은순</option>
+            <option value="reviews">리뷰 많은순</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <p class="result-count" id="result-count"></p>
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <p class="empty" id="empty" hidden>조건에 맞는 식당이 없어요. 필터를 바꿔보세요.</p>
+  </main>
+
+  <dialog id="detail" class="detail">
+    <div class="detail-body" id="detail-body"></div>
+    <form method="dialog"><button class="close-btn" aria-label="닫기">✕</button></form>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 한끼맛집 · 표시된 식당 정보는 샘플 데이터입니다.</div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
