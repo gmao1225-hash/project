@@ -2,6 +2,20 @@
 
 정적 웹페이지(HTML/CSS/JS, 빌드 도구 없음). `index.html`을 브라우저로 열면 실행된다.
 
+## 팀 구성 (필수)
+
+역할 분담은 [`TEAMS.md`](TEAMS.md)를 따른다. 요청이 들어오면 맞는 팀 에이전트(`.claude/agents/`)에게 맡긴다.
+
+| 요청 | 담당 |
+|---|---|
+| 오너가 식당 정보를 보냄 / 식당 등록·수정·삭제 | `content-team` |
+| 새 기능·화면 기획, 백로그 | `planning-team` |
+| 홍보 문구, SNS, SEO | `marketing-team` |
+| 데이터베이스, 서버, 배포, 보안 | `backend-team` |
+
+- 오너는 식당을 직접 리서치해서 채팅이나 `research/inbox/`로 보낸다. 식당 정보·평점·리뷰는 오너가 준 것만 쓰고 지어내지 않는다.
+- 외부 게시, 배포, 데이터 삭제, 유료 서비스 사용은 오너 승인 후에만 한다.
+
 ## 디자인 규칙 (필수)
 
 **모든 신규 기능과 화면은 [`design.md`](design.md)의 디자인 형식을 따른다.** 화면을 만들거나 고치기 전에 design.md를 먼저 읽는다.
@@ -29,4 +43,8 @@ css/style.css   디자인 토큰(:root)과 컴포넌트 스타일
 js/data.js      식당 데이터 (샘플)
 js/app.js       검색/필터/정렬/찜 로직
 design.md       디자인 시스템 (모든 화면의 기준)
+TEAMS.md        팀 구성과 업무 흐름
+.claude/agents/ 팀별 에이전트 (content/planning/marketing/backend)
+research/       오너 리서치 (TEMPLATE.md, inbox/, archive/, CHANGELOG.md)
+docs/           팀별 결과물 (planning/, marketing/, backend/)
 ```
